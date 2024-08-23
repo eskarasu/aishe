@@ -29,30 +29,29 @@ model = genai.GenerativeModel(
     """
 )
 
-# JSON dosyasının yolu
+# path for JSON file
 CHAT_HISTORY_FILE = "chat_history.json"
 
-# JSON dosyasını yükle
+# load JSON file
 def load_chat_history():
     if os.path.exists(CHAT_HISTORY_FILE):
         with open(CHAT_HISTORY_FILE, "r") as file:
             return json.load(file)
     return []
 
-# JSON dosyasına yaz
+
 def save_chat_history(history):
     with open(CHAT_HISTORY_FILE, "w") as file:
         json.dump(history, file, indent=4)
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    # Sohbet geçmişini yükle
+
     chat_history = load_chat_history()
 
     data = request.json
     user_message = data.get("message", "")
 
-    # Kullanıcı mesajını geçmişe ekle
     chat_history.append({
         "role": "user",
         "parts": [user_message],
@@ -63,13 +62,12 @@ def chat():
     )
     response = chat_session.send_message(user_message)
 
-    # Model cevabını geçmişe ekle
+
     chat_history.append({
         "role": "model",
         "parts": [response.text],
     })
 
-    # Sohbet geçmişini kaydet
     save_chat_history(chat_history)
 
     return jsonify({"response": response.text})
