@@ -3,10 +3,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 void main() {
-  runApp(AIkizApp());
+  runApp(AISheApp());
 }
 
-class AIkizApp extends StatelessWidget {
+class AISheApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +50,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AIkiz Chat'),
+        title: Text('AIShe Chat'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
