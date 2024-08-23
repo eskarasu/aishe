@@ -24,6 +24,7 @@ class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   List<Map<String, String>> _messages = [];
+  bool _isTyping = false; // Yükleme durumu değişkeni
 
   Future<void> _sendMessage() async {
     final message = _controller.text;
@@ -31,6 +32,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _messages.add({"sender": "user", "text": message});
+      _isTyping = true; // "AIShe typing..." animasyonunu başlat
     });
 
     _controller.clear();
@@ -46,10 +48,12 @@ class _ChatScreenState extends State<ChatScreen> {
       final data = jsonDecode(response.body);
       setState(() {
         _messages.add({"sender": "bot", "text": data['response']});
+        _isTyping = false; // Yükleme animasyonunu durdur
       });
     } else {
       setState(() {
         _messages.add({"sender": "bot", "text": "Error: Unable to get response from server."});
+        _isTyping = false; // Yükleme animasyonunu durdur
       });
     }
 
@@ -77,8 +81,26 @@ class _ChatScreenState extends State<ChatScreen> {
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
-              itemCount: _messages.length,
+              itemCount: _messages.length + (_isTyping ? 1 : 0), // "AIShe typing..." mesajı için yer aç
               itemBuilder: (context, index) {
+                if (index == _messages.length && _isTyping) {
+                  return Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+                      padding: EdgeInsets.all(12.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Text(
+                        "AIShe typing...",
+                        style: TextStyle(color: Colors.black87, fontStyle: FontStyle.italic),
+                      ),
+                    ),
+                  );
+                }
+
                 final message = _messages[index];
                 bool isUserMessage = message["sender"] == "user";
 
