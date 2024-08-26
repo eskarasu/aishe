@@ -1,0 +1,14 @@
+# CMake dosyalarını dil tespitinden hariç tut
+*.cmake linguist-vendored
+
+# C/C++ dosyalarını dil tespitinden hariç tut
+*.c linguist-vendored
+*.h linguist-vendored
+*.cpp linguist-vendored
+*.hpp linguist-vendored
+
+# Swift dosyalarını dil tespitinden hariç tut
+*.swift linguist-vendored
+
+# Dart dosyalarını dil tespitinde öncelikli yap
+*.dart linguist-detectable=true
