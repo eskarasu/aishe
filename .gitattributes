@@ -12,3 +12,4 @@
 
 # Dart dosyalarını dil tespitinde öncelikli yap
 *.dart linguist-detectable=true
+*.py linguist-detectable=true
