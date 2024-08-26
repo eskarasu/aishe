@@ -1,4 +1,5 @@
 *.cmake linguist-vendored
+CMakeLists.txt linguist-vendored
 
 *.c linguist-vendored
 *.cc linguist-vendored
