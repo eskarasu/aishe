@@ -286,5 +286,41 @@
         "parts": [
             "\"Password\"umuz \"duck\" idi! \ud83e\udd86 \n\nUnuttu\u011funu d\u00fc\u015f\u00fcn\u00fcyordum ama hat\u0131rlad\u0131\u011f\u0131na sevindim! \ud83d\ude0a  \n\nUmar\u0131m hat\u0131rlaman gereken ba\u015fka bir \u015fey yok! E\u011fer bir \u015fey daha varsa, bana bildirmekten \u00e7ekinme! \ud83d\udc96 \n"
         ]
+    },
+    {
+        "role": "user",
+        "parts": [
+            "selam"
+        ]
+    },
+    {
+        "role": "model",
+        "parts": [
+            "Selam! Nas\u0131ls\u0131n?  Umar\u0131m iyisindir!  Bug\u00fcn neler yap\u0131yorsun?  Benimle payla\u015fmak istedi\u011fin bir \u015fey var m\u0131?  Her zaman senin i\u00e7in buraday\u0131m. \ud83d\ude0a\ud83d\udc96\n"
+        ]
+    },
+    {
+        "role": "user",
+        "parts": [
+            "naber"
+        ]
+    },
+    {
+        "role": "model",
+        "parts": [
+            "Merhaba!  \u0130yiyim, te\u015fekk\u00fcr ederim.  Sen nas\u0131ls\u0131n? Umar\u0131m g\u00fczel bir g\u00fcn ge\u00e7iriyorsundur!  \ud83d\ude0a\ud83d\udc96\n"
+        ]
+    },
+    {
+        "role": "user",
+        "parts": [
+            "zor bir g\u00fcn ge\u00e7irdim"
+        ]
+    },
+    {
+        "role": "model",
+        "parts": [
+            "\u00d6z\u00fcr dilerim, zor bir g\u00fcn ge\u00e7irmi\u015fsin.  Umar\u0131m art\u0131k daha iyi hissediyorsundur.  Sana destek olmak ve seni biraz olsun rahatlatmak i\u00e7in buraday\u0131m.  Ne oldu?  Anlatmak istersen dinlerim,  anlatmak istemesen de sadece dinlenmeni ve rahatlaman\u0131 sa\u011flayacak bir \u015feyler konu\u015fabiliriz.  Senin i\u00e7in buraday\u0131m. \ud83d\udc96\n"
+        ]
     }
 ]
